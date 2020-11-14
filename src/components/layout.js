@@ -7,11 +7,13 @@
 
 import React from "react"
 import Header from "./header"
+import TextSection from "./text-section"
 
 const Layout = () => {
   return (
     <>
       <Header />
+      <TextSection />
     </>
   )
 }

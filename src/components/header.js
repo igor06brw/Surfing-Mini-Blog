@@ -6,17 +6,28 @@ import { graphql, useStaticQuery } from 'gatsby'
 import BackgroundImage from "gatsby-background-image"
 
 const StyledContainer = styled.div`
-  width: 100%;
   overflow: hidden;
-  position: relative;
+`
+
+const AbsoluteOfBackground = styled.div`
+  display: block;
+  overflow-x: hidden;
+  z-index: -1;
+  right: 0;
+  position: absolute;
 `
 
 const StyledBackground = styled(BackgroundImage)`
-  display: block;
   width: 100vw;
-  height: 80vh;
-  position: absolute;
+  height: 100vh;
+  max-width:100%;
   overflow: hidden;
+`
+
+const StyledHeader = styled.div`
+  display: block;
+  max-width: 1140px;
+  margin: 0 auto;
 `
 
 const Header = () => {
@@ -40,9 +51,11 @@ const Header = () => {
     <header>
       <Nav></Nav>
       <StyledContainer>
-        <StyledBackground Tag="div" fluid={imageData}>
-        </StyledBackground>
+        <AbsoluteOfBackground>
+          <StyledBackground Tag="div" fluid={imageData}/>
+        </AbsoluteOfBackground>
       </StyledContainer>
+      <StyledHeader>ssss</StyledHeader>
     </header>
   )
 }
