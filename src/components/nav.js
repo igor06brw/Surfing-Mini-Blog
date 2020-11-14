@@ -20,16 +20,41 @@ const StyledLi = styled.li`
     margin: 0 1rem;
     text-align: center;
 
-    &:nth-of-type(1) > a {
-        &:hover {
-            color: red;
+    &:first-of-type > a {
+        &:hover, 
+        &:active,
+        &:focus {
+            color: #3b5998;
         }
     }
+    &:nth-of-type(2) > a {
+        &:hover, 
+        &:active,
+        &:focus {
+            color: #00acee;
+        }
+    }
+    &:nth-of-type(3) > a {
+        &:hover, 
+        &:active,
+        &:focus {
+            color: #c8232c;
+        }
+    }
+    &:last-of-type > a {
+        &:hover, 
+        &:active,
+        &:focus {
+            color: #833AB4;
+        }
+    }
+
 ` 
 const StyledLink = styled.a`
     display: block;
     width: 100%;
     height: 100%;
+    cursor: pointer;
 `
 
 const Wrapper = styled.div`
@@ -108,7 +133,7 @@ const Nav = () => {
                         <StyledLink><i class="fab fa-pinterest"></i></StyledLink>
                     </StyledLi>
                     <StyledLi>
-                        <StyledLink><i class="fab fa-instagram"></i></StyledLink>
+                        <StyledLink><i class="fab fa-instagram-square"></i></StyledLink>
                     </StyledLi>
                 </StyledUl>
             </Wrapper>
