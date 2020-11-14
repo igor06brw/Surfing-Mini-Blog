@@ -24,6 +24,15 @@ const Nav = () => {
                 <StyledLi>
                     <StyledLink><i class="fab fa-facebook-f"></i></StyledLink>
                 </StyledLi>
+                <StyledLi>
+                    <StyledLink><i class="fab fa-twitter"></i></StyledLink>
+                </StyledLi>
+                <StyledLi>
+                    <StyledLink><i class="fab fa-pinterest"></i></StyledLink>
+                </StyledLi>
+                <StyledLi>
+                    <StyledLink><i class="fab fa-instagram"></i></StyledLink>
+                </StyledLi>
             </StyledUl>
         </StyledNav>
     )
