@@ -14,13 +14,22 @@ const StyledUl = styled.ul`
 `
 
 const StyledLi = styled.li`
-    display: inline;
-    padding: 0 1.5em;
+    display: inline-block;
+    height: 30px;
+    width: 50px;
+    margin: 0 1rem;
+    text-align: center;
 
-
+    &:nth-of-type(1) > a {
+        &:hover {
+            color: red;
+        }
+    }
 ` 
 const StyledLink = styled.a`
+    display: block;
     width: 100%;
+    height: 100%;
 `
 
 const Wrapper = styled.div`
