@@ -3,7 +3,7 @@ import styled from "styled-components"
 import logo from "../images/logo.png"
 
 const StyledNav = styled.nav`
-    padding: 10px 50px;
+    padding: 20px 50px;
     max-width: 1725px;
     display: flex;
     flex-direction: row;
