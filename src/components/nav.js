@@ -21,11 +21,36 @@ const Wrapper = styled.div`
 `
 
 const Hamburger = styled.a`
-
+    margin: 20px;
+    display: block;
+    position: relative;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
 `
 
 const Line = styled.span`
-    background-color: #cdcdcd;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 9999px;
+    background-color: #1f5e97;
+
+    &:nth-of-type(1) {
+        right: 0;
+        width: 65%;
+    }
+
+    &:nth-of-type(2) {
+        top: 10px;
+    }
+    &:nth-of-type(3) {
+        top: 20px;
+        left: 0;
+        width: 65%;
+    }
 `
 
 
@@ -35,7 +60,6 @@ const Nav = () => {
 
     return (
         <StyledNav>
-
             <Wrapper>
                 <Hamburger>
                     <Line />
