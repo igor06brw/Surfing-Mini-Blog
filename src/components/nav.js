@@ -4,20 +4,22 @@ import logo from "../images/logo.png"
 
 const StyledNav = styled.nav`
     max-width: 1725px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 `
 const StyledUl = styled.ul`
-    
 `
 
 const StyledLi = styled.li`
-
+    display: inline;
 ` 
 const StyledLink = styled.a`
 
 `
 
 const Wrapper = styled.div`
-
+    display: flex;
 `
 
 const Hamburger = styled.a`
