@@ -22,7 +22,7 @@ const Nav = () => {
         <StyledNav>
             <StyledUl>  
                 <StyledLi>
-                    <StyledLink></StyledLink>
+                    <StyledLink><i class="fab fa-facebook-f"></i></StyledLink>
                 </StyledLi>
             </StyledUl>
         </StyledNav>
