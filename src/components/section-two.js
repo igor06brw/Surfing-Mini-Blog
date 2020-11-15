@@ -10,7 +10,6 @@ const Section = styled.section`
 const Container = styled.div`
     margin: 0 auto;
     background-color: white;
-    height: 500px;
     max-width: 1140px;
     overflow-x: hidden;
 `
@@ -20,7 +19,15 @@ const CustomBackground = styled(BackgroundImage)`
 `
 
 const Wrapper = styled.div`
-    text-align: center;
+    &:first-of-type {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    &:last-of-type {
+        text-align: left;
+        display: flex;
+        justify-content: space-evenly;
+    }
 `
 
 
@@ -47,6 +54,14 @@ const SectionTwo= () => {
                     <Wrapper>
                         <h3>When you get a good group of babes together, there’s nothing better!" </h3>
                         <p>An elegant, modern and fully cutomizable UI Kit</p>
+                    </Wrapper>
+                    <Wrapper>
+                        <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.
+
+This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor. </p>
+                        <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.
+
+This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor. </p>
                     </Wrapper>
                 </CustomBackground>
             </Container>
