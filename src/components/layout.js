@@ -7,13 +7,13 @@
 
 import React from "react"
 import Header from "./header"
-import TextSection from "./text-section"
+import SectionTwo from "./section-two"
 
 const Layout = () => {
   return (
     <>
       <Header />
-      <TextSection />
+      <SectionTwo />
     </>
   )
 }
