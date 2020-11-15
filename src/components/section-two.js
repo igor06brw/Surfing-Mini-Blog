@@ -7,10 +7,13 @@ import Img from "gatsby-image"
 
 const Section = styled.section`
     max-width:1725px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
 `
 
 const Container = styled.div`
-    margin: 0 auto;
     background-color: white;
     max-width: 1140px;
     overflow-x: hidden;
@@ -32,6 +35,12 @@ const Wrapper = styled.div`
     }
 `
 
+const WrapperOfImage = styled.div`
+margin-top: 200px;
+    max-width: 200px;
+    width: 33%;
+    max-height: 400px;
+`
 
 const SectionTwo= () => {
     const data = useStaticQuery(
@@ -46,7 +55,7 @@ const SectionTwo= () => {
             }
             bgThree: file(relativePath: {eq: "bg-3.jpg"}) {
               childImageSharp {
-                fluid(quality: 100, maxWidth: 500) {
+                fluid(quality: 100, maxWidth: 200) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -60,8 +69,10 @@ const SectionTwo= () => {
     
     return (
         <Section>
+            <WrapperOfImage>
+                <Img fluid={bgThree} fadeIn={true} />
+            </WrapperOfImage>
             <Container>
-                <Img fluid={bgThree} />
                 <CustomBackground Tag="div" fluid={bgTwo}>
                     <Wrapper>
                         <h3>When you get a good group of babes together, there’s nothing better!" </h3>
