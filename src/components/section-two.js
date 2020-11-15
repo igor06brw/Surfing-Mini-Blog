@@ -8,6 +8,7 @@ import Img from "gatsby-image"
 const Section = styled.section`
     max-width:1725px;
     display: flex;
+    margin: 0 auto;
     flex-direction: row;
     justify-content: space-between;
 
@@ -36,10 +37,16 @@ const Wrapper = styled.div`
 `
 
 const WrapperOfImage = styled.div`
-margin-top: 200px;
+    margin-top: 200px;
     max-width: 200px;
     width: 33%;
     max-height: 400px;
+
+
+`
+
+const WrapperOfText = styled.div`
+width: 200px;
 `
 
 const SectionTwo= () => {
@@ -88,6 +95,9 @@ This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor
                     </Wrapper>
                 </CustomBackground>
             </Container>
+            <WrapperOfText>
+                <p class="scroll">Scroll<span class="sign">x</span></p>
+            </WrapperOfText>
         </Section>
     )
 }

@@ -2,6 +2,7 @@
     --headline-color: #393939;
     --text-color: #747a8b;
     --p-of-header: #007fc1;
+    --scroll-text: #ffcf0b;
 }
 
 h3 {
@@ -17,4 +18,18 @@ p {
 h3 ~ p {
     color: var(--p-of-header);
     width: 100%;
+}
+
+.sign {
+    color: var(--headline-color);
+    margin-left: 1em; 
+}
+
+.scroll {
+    margin-top: 3em; 
+    text-align: center;
+    color: var(--scroll-text);
+    font-size: 7em;
+    transform: rotate(90deg);
+    width: 3em;
 }
