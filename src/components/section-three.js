@@ -1,3 +1,9 @@
+import React from "react"
+import styled from "styled-components"
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from "gatsby-image"
+
+
 const SectionThree= () => {
     
     const Section = styled.section`
@@ -8,24 +14,46 @@ const SectionThree= () => {
         justify-content: space-between;
     `
 
-    const Container = styled.div`
+    const Article = styled.article`
         background-color: white;
         max-width: 1140px;
         overflow-x: hidden;
     `
+
     
     
     const data = useStaticQuery(
         graphql`
           query {
-
+            allFile(filter: {name: {regex: "/article/"}}) {
+                edges {
+                    node {
+                        id
+                        relativePath
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+            }
           }
         `  
     )
+
+    const articleImage = data.allFile.edges.node.childImageSharp.fluid;
+    const articleNodes = data.allFile.edges
     
     return (
         <Section>
-        
+            <Article>
+                {
+                    articleNodes.map(e => {
+                        console.log(e);
+                    })
+                }
+            </Article>
         </Section>
     )
 }
