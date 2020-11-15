@@ -20,6 +20,7 @@ const CustomBackground = styled(BackgroundImage)`
 `
 
 const Wrapper = styled.div`
+    text-align: center;
 `
 
 
