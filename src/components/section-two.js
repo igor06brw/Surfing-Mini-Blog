@@ -37,16 +37,14 @@ const Wrapper = styled.div`
 `
 
 const WrapperOfImage = styled.div`
-    margin-top: 200px;
-    max-width: 200px;
+    margin-top: 3em;
+    max-width: 170px;
     width: 33%;
     max-height: 400px;
-
-
 `
 
 const WrapperOfText = styled.div`
-width: 200px;
+    width: 200px;
 `
 
 const SectionTwo= () => {

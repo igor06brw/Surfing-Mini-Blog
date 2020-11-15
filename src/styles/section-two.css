@@ -26,10 +26,10 @@ h3 ~ p {
 }
 
 .scroll {
-    margin-top: 3em; 
+    margin-top: 4em; 
     text-align: center;
     color: var(--scroll-text);
-    font-size: 7em;
+    font-size: 4em;
     transform: rotate(90deg);
     width: 3em;
 }
