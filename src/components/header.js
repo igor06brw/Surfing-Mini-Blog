@@ -19,15 +19,27 @@ const AbsoluteOfBackground = styled.div`
 
 const StyledBackground = styled(BackgroundImage)`
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   max-width:100%;
   overflow: hidden;
 `
 
-const StyledHeader = styled.div`
+const StyledWrapper = styled.div`
   display: block;
+  height: 65vh;
   max-width: 1140px;
   margin: 0 auto;
+`
+
+const StyledHeadline = styled.h1`
+  text-align: center;
+  margin-top: 20%;
+  color: #fff;
+  font-family: 'Parisienne', cursive;
+  transform: rotate(-30deg);
+  font-size: 18em;
+
+  text-shadow: #fff 0px 0px 5px
 `
 
 const Header = () => {
@@ -36,7 +48,7 @@ const Header = () => {
       query {
         file(relativePath: {eq: "bg.jpg"}) {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid(quality: 100, maxWidth: 3000) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -55,7 +67,9 @@ const Header = () => {
           <StyledBackground Tag="div" fluid={imageData}/>
         </AbsoluteOfBackground>
       </StyledContainer>
-      <StyledHeader>ssss</StyledHeader>
+      <StyledWrapper>
+        <StyledHeadline>Surfing</StyledHeadline>
+      </StyledWrapper>
     </header>
   )
 }
