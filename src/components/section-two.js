@@ -1,7 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from 'gatsby'
+
 import BackgroundImage from "gatsby-background-image"
+import Img from "gatsby-image"
 
 const Section = styled.section`
     max-width:1725px;
@@ -35,9 +37,16 @@ const SectionTwo= () => {
     const data = useStaticQuery(
         graphql`
           query {
-            file(relativePath: {eq: "bg-2.jpg"}) {
+            bgTwo: file(relativePath: {eq: "bg-2.jpg"}) {
               childImageSharp {
                 fluid(quality: 100, maxWidth: 3000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            bgThree: file(relativePath: {eq: "bg-3.jpg"}) {
+              childImageSharp {
+                fluid(quality: 100, maxWidth: 500) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -45,12 +54,15 @@ const SectionTwo= () => {
           }
         `
     )
-    const imageData = data.file.childImageSharp.fluid
+    const bgTwo = data.bgTwo.childImageSharp.fluid
+    const bgThree = data.bgThree.childImageSharp.fluid
 
+    
     return (
         <Section>
             <Container>
-                <CustomBackground Tag="div" fluid={imageData}>
+                <Img fluid={bgThree} />
+                <CustomBackground Tag="div" fluid={bgTwo}>
                     <Wrapper>
                         <h3>When you get a good group of babes together, there’s nothing better!" </h3>
                         <p>An elegant, modern and fully cutomizable UI Kit</p>
