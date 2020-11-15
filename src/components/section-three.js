@@ -3,25 +3,21 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from "gatsby-image"
 
+const Section = styled.section`
+    max-width:1725px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    `
+
+const Article = styled.article`
+    background-color: white;
+    max-width: 1140px;
+    overflow-x: hidden;
+`
 
 const SectionThree= () => {
-    
-    const Section = styled.section`
-        max-width:1725px;
-        display: flex;
-        margin: 0 auto;
-        flex-direction: row;
-        justify-content: space-between;
-    `
-
-    const Article = styled.article`
-        background-color: white;
-        max-width: 1140px;
-        overflow-x: hidden;
-    `
-
-    
-    
     const data = useStaticQuery(
         graphql`
           query {
@@ -42,16 +38,16 @@ const SectionThree= () => {
         `  
     )
 
-    const articleImage = data.allFile.edges.node.childImageSharp.fluid;
+    // const articleImage = data.allFile.edges.node.childImageSharp.fluid;
     const articleNodes = data.allFile.edges
     
     return (
         <Section>
             <Article>
                 {
-                    articleNodes.map(e => {
-                        console.log(e);
-                    })
+                    articleNodes.map(e => (
+                        <Img fluid={e.node.childImageSharp.fluid} />
+                    ))
                 }
             </Article>
         </Section>
