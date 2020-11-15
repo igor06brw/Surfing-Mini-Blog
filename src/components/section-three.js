@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from 'gatsby'
+import Article from "../templates/article"
 import Img from "gatsby-image"
 
 const Section = styled.section`
@@ -9,12 +10,25 @@ const Section = styled.section`
     margin: 0 auto;
     flex-direction: row;
     justify-content: space-between;
-    `
-
-const Article = styled.article`
+`
+const Container = styled.div`
     background-color: white;
     max-width: 1140px;
+    margin: 0 auto;
     overflow-x: hidden;
+`
+
+const ArticleImage = styled(Img)`
+    width: 300px;
+`
+
+const ArticleContent = styled.div`
+    width: 50%
+
+`
+
+const ArticleWrapper = styled.div`
+    display: inline-flex;
 `
 
 const SectionThree= () => {
@@ -37,19 +51,24 @@ const SectionThree= () => {
           }
         `  
     )
+    const articleNodes = data.allFile.edges;
 
-    // const articleImage = data.allFile.edges.node.childImageSharp.fluid;
-    const articleNodes = data.allFile.edges
-    
+
     return (
         <Section>
-            <Article>
+            <Container>
                 {
                     articleNodes.map(e => (
-                        <Img fluid={e.node.childImageSharp.fluid} />
+                        <ArticleWrapper>
+                            <ArticleImage fluid={e.node.childImageSharp.fluid}/>
+                            <ArticleContent>
+                                <h3>Surfing an excellent workout</h3>
+                                <p>I meant no insult. You are done. Fired. Do not show your face at the laundry again. Stay away from Pinkman. Do not go near him. Ever. Are you listening to me? What do you say? I meant no insult. You are done. Fired. Do not show your face at the laundry again. Stay away from Pinkman. Do not go near him. Ever. Are you listening to me? What do you say?</p>
+                            </ArticleContent>
+                        </ArticleWrapper>
                     ))
                 }
-            </Article>
+            </Container>
         </Section>
     )
 }
