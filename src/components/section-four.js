@@ -16,20 +16,28 @@ const Container = styled.div`
     margin: 0 auto;
 `
 
-const SectionFour = () => {
-    const data = useStaticQuery(
-        graphql`
-          query {
+const Quote = styled.blockquote`
+    
+`
 
-          }
-        `  
-    )
+const SectionFour = () => {
+    // const data = useStaticQuery(
+    //     graphql`
+    //       query {
+
+    //       }
+    //     `  
+    // )
 
 
     return (
         <Section>
             <Container>
-                
+                <Quote>
+                    <p>"</p>
+                    <p>Happiness cannot be traveled to, owned, earned, or worn. It is the spiritual experience of living every minute with love, grace & gratitude.</p>
+                    <p>Denis Waitley</p>
+                </Quote>
             </Container>
         </Section>
     )
