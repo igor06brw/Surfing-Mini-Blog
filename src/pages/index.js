@@ -1,9 +1,19 @@
 import React from "react"
-import Layout from "../components/layout"
+import Header from "./header"
+import SectionTwo from "./section-two"
+import SectionThree from "./section-three"
+import SectionFour from "./section-four"
+import SectionFive from "./section-five"
 
 const IndexPage = () => (
   <>
-    <Layout />
+    <Header />
+    <SectionTwo />
+    <SectionThree />
+    <SectionFour />
+    <SectionFive>
+      
+    </SectionFive>
   </>
 )
 
