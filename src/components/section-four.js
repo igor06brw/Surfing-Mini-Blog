@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 const Section = styled.section`
     max-width:1725px;
     display: flex;
-    margin: 0 auto;
+    margin: 15em auto 0 auto;
     flex-direction: row;
     justify-content: space-between;
     position: relative;
@@ -13,11 +13,32 @@ const Section = styled.section`
 const Container = styled.div`
     background-color: white;
     max-width: 1140px;
-    margin: 0 auto;
+    margin: 0 auto 20% auto;
 `
 
 const Quote = styled.blockquote`
+    padding-bottom: 15%;
+    border-bottom: 5px double #cdcdcd;
+    text-align: center;
+
+    & > * {
+        width: 100%;
+    }
     
+`
+
+const QuoteSign = styled.p`
+    font-size: 5em;
+`
+
+const QuoteContent = styled.p`
+    font-size: 2em;
+`
+
+const QuoteAuthor =  styled.p`
+    margin-top: 1em;
+    font-size: 2em;
+    font-style: italic;
 `
 
 const SectionFour = () => {
@@ -34,9 +55,9 @@ const SectionFour = () => {
         <Section>
             <Container>
                 <Quote>
-                    <p>"</p>
-                    <p>Happiness cannot be traveled to, owned, earned, or worn. It is the spiritual experience of living every minute with love, grace & gratitude.</p>
-                    <p>Denis Waitley</p>
+                    <QuoteSign>"</QuoteSign>
+                    <QuoteContent>Happiness cannot be traveled to, owned, earned, or worn. It is the spiritual experience of living every minute with love, grace & gratitude.</QuoteContent>
+                    <QuoteAuthor>Denis Waitley</QuoteAuthor>
                 </Quote>
             </Container>
         </Section>
