@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from 'gatsby'
-import Article from "../templates/article"
 import Img from "gatsby-image"
 
 const Section = styled.section`
@@ -19,11 +18,11 @@ const Container = styled.div`
 `
 
 const ArticleImage = styled(Img)`
-    width: 50em;
+    width: 53.8em;
 `
 
 const ArticleContent = styled.div`
-    margin-top: 5em;
+    margin-top: 3.5em;
     width: 45%;
 
     & > * {
