@@ -3,11 +3,13 @@ import styled from "styled-components"
 import BackgroundFour from "../images/bg-4.jpg"
 
 const ContainerImageWrapper = styled.div`
+    top: 0;
     left: 0;
     position: absolute;
+    z-index: -1;
 `
 const ContainerImage = styled.img`
-    width: 53.8em;
+    width: 100%;
 `
 
 
@@ -17,12 +19,11 @@ const Section = styled.section`
     margin: 15em auto 0 auto;
     flex-direction: row;
     justify-content: space-between;
-    position: relative;
 `
 const Container = styled.div`
-    background-color: white;
     max-width: 1140px;
     margin: 0 auto 20% auto;
+    position: relative;
 `
 
 const Quote = styled.blockquote`
