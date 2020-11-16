@@ -3,7 +3,8 @@ import React from "react"
 import Header from "./header"
 import SectionTwo from "./section-two"
 import SectionThree from "./section-three"
-import SectionFour from "./section-Four"
+import SectionFour from "./section-four"
+import SectionFive from "./section-five"
 
 const Layout = () => {
   return (
@@ -12,6 +13,7 @@ const Layout = () => {
       <SectionTwo />
       <SectionThree />
       <SectionFour />
+      <SectionFive />
     </>
   )
 }

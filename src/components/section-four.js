@@ -22,7 +22,7 @@ const Section = styled.section`
 `
 const Container = styled.div`
     max-width: 1140px;
-    margin: 0 auto 20% auto;
+    margin: 0 auto;
     position: relative;
 `
 
