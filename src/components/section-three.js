@@ -10,25 +10,48 @@ const Section = styled.section`
     margin: 0 auto;
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
 `
 const Container = styled.div`
     background-color: white;
     max-width: 1140px;
     margin: 0 auto;
-    overflow-x: hidden;
 `
 
 const ArticleImage = styled(Img)`
-    width: 300px;
+    width: 50em;
 `
 
 const ArticleContent = styled.div`
-    width: 50%
+    margin-top: 5em;
+    width: 45%;
+
+    & > * {
+        padding: 0;
+    }
 
 `
 
 const ArticleWrapper = styled.div`
     display: inline-flex;
+    
+    justify-content: flex-end;
+    padding: 5em 2em;
+
+    &:nth-of-type(even) {
+        flex-direction: row-reverse;
+
+
+        & > div:first-of-type {
+            left: auto;
+            right: 0;
+        }
+    }
+`
+
+const ArticleImageWrapper = styled.div`
+    left: 0;
+    position: absolute;
 `
 
 const SectionThree= () => {
@@ -60,7 +83,9 @@ const SectionThree= () => {
                 {
                     articleNodes.map(e => (
                         <ArticleWrapper>
-                            <ArticleImage fluid={e.node.childImageSharp.fluid}/>
+                            <ArticleImageWrapper>
+                                <ArticleImage fluid={e.node.childImageSharp.fluid}/>
+                            </ArticleImageWrapper>
                             <ArticleContent>
                                 <h3>Surfing an excellent workout</h3>
                                 <p>I meant no insult. You are done. Fired. Do not show your face at the laundry again. Stay away from Pinkman. Do not go near him. Ever. Are you listening to me? What do you say? I meant no insult. You are done. Fired. Do not show your face at the laundry again. Stay away from Pinkman. Do not go near him. Ever. Are you listening to me? What do you say?</p>
