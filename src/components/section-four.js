@@ -1,6 +1,15 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, useStaticQuery } from 'gatsby'
+import BackgroundFour from "../images/bg-4.jpg"
+
+const ContainerImageWrapper = styled.div`
+    left: 0;
+    position: absolute;
+`
+const ContainerImage = styled.img`
+    width: 53.8em;
+`
+
 
 const Section = styled.section`
     max-width:1725px;
@@ -42,18 +51,12 @@ const QuoteAuthor =  styled.p`
 `
 
 const SectionFour = () => {
-    // const data = useStaticQuery(
-    //     graphql`
-    //       query {
-
-    //       }
-    //     `  
-    // )
-
-
     return (
         <Section>
             <Container>
+                <ContainerImageWrapper>
+                    <ContainerImage src={BackgroundFour}/>
+                </ContainerImageWrapper>
                 <Quote>
                     <QuoteSign>"</QuoteSign>
                     <QuoteContent>Happiness cannot be traveled to, owned, earned, or worn. It is the spiritual experience of living every minute with love, grace & gratitude.</QuoteContent>

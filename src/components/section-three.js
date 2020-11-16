@@ -53,7 +53,7 @@ const ArticleImageWrapper = styled.div`
     position: absolute;
 `
 
-const SectionThree= () => {
+const SectionThree = () => {
     const data = useStaticQuery(
         graphql`
           query {
