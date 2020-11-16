@@ -27,6 +27,14 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: `354423237139e882e840abe6efb567`,
+        preview: false,
+        disableLiveReload: false,
+      },
+    },
     `gatsby-plugin-styled-components`
 
     
