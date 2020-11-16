@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+import ArticlePost from "../templates/article-post"
+
 const Section = styled.section`
     max-width:1725px;
     display: flex;
@@ -18,7 +20,7 @@ const SectionFive = () => {
     return (  
         <Section>
             <Container>
-                
+                <ArticlePost />
             </Container>
         </Section>
     )
