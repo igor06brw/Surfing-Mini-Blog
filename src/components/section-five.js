@@ -18,7 +18,7 @@ const SectionFive = () => {
     return (  
         <Section>
             <Container>
-                sssssss
+                
             </Container>
         </Section>
     )
