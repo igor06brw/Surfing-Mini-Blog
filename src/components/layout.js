@@ -1,19 +1,10 @@
 import React from "react"
-import Header from "./header"
-import SectionTwo from "./section-two"
-import SectionThree from "./section-three"
-import SectionFour from "./section-four"
-import SectionFive from "./section-five"
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
-    <>
-      <Header />
-      <SectionTwo />
-      <SectionThree />
-      <SectionFour />
-      <SectionFive />
-    </>
+    <div>
+      {children}
+    </div>
   )
 }
 
