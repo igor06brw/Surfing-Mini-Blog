@@ -1,7 +1,24 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+exports.onCreateNode = ({ node, getNode }) => {
+    if (node.internal.type === `DatoCmsSurfingschema`) {
+      const fileNode = getNode(node.parent)
+      console.log(`\n`, node.internal.type)
+    }
+  }
 
-// You can delete this file if you're not using it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

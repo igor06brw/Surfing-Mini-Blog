@@ -2,30 +2,25 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-import PostImage from "../images/post-1.jpg"
-
 const Article = styled.div`
+    margin: 30px auto;
     display: inline-flex;
     flex-direction: row-reverse;
     align-items: center;
     width: 100%;
-
-    &:nth-of-child(4){
-        align-items: flex-end;
-    }
 `
 
 const ArticleImage = styled.img`
-    width: 50%;
+    width: 49%;
 `
 
 const ArticleContent = styled.div`
-    width: 50%;
+    width: 51%;
     padding: 0 50px;
     text-align: center;
 `
 
-const ArticleDate = styled.p`
+const ArticleDate = styled.p`   
     width: auto;
 `
 
@@ -35,21 +30,24 @@ const ArticleHeader = styled.h3`
 `
 
 const ArticleText = styled.p`
+    margin-bottom: 25px;
 
 `
 
 const ArticleLink = styled(Link)`
-
+    color: #ffcf0b;
+    border-bottom: 1px solid #ffcf0b;
+    cursor: pointer;
 `
 
-const ArticlePost = () => {
+const ArticlePost = (data) => {
     return (
         <Article>
-            <ArticleImage src={PostImage}/>
+            <ArticleImage src={data.props.node.image.url}/>
             <ArticleContent>
-                <ArticleDate>Friday, October 7,  2017</ArticleDate>
-                <ArticleHeader>NLand Surf Park Opening</ArticleHeader>
-                <ArticleText>is is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor. This is      Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor. This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</ArticleText>
+                <ArticleDate>{data.props.node.date}</ArticleDate>
+                <ArticleHeader>{data.props.node.header}</ArticleHeader>
+                <ArticleText>{data.props.node.post}</ArticleText>
                 <ArticleLink>Read More</ArticleLink>
             </ArticleContent>
         </Article>
