@@ -11,6 +11,10 @@ const StyledNav = styled.nav`
     justify-content: space-between
 `
 const StyledUl = styled.ul`
+
+    @media (max-width: 768px) {
+        display: flex;
+    }
 `
 
 const StyledLi = styled.li`
@@ -48,6 +52,9 @@ const StyledLi = styled.li`
             color: #833AB4;
         }
     }
+    @media (max-width: 768px) {
+        margin: 0 0.5rem;
+    }
 
 ` 
 const StyledLink = styled.a`
@@ -70,6 +77,14 @@ const Wrapper = styled.div`
     &:nth-of-type(3) {
         justify-content: flex-end;
     }
+
+    @media (max-width: 768px) {
+        width: auto;
+
+        &:nth-of-type(3) {
+            justify-content: flex-start;
+        }
+      }
 `
 
 const Hamburger = styled.a`

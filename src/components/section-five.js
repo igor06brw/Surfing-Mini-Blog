@@ -22,6 +22,14 @@ const Container = styled.div`
             flex-direction: row;
         }
     }
+
+    @media (max-width: 768px) {
+        & > div {
+            &:nth-of-type(even) {
+                flex-direction: column;
+            }
+        }
+    }
 `
 
 const SectionFive = ({children}) => {

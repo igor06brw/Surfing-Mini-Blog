@@ -24,3 +24,11 @@ a, p {
     max-width: 1725px;
 }
 
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+

@@ -19,6 +19,10 @@ const Section = styled.section`
     margin: 15em auto 0 auto;
     flex-direction: row;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+        margin: 1em auto;
+    }
 `
 const Container = styled.div`
     max-width: 1140px;

@@ -19,7 +19,15 @@ const Container = styled.div`
 
     & > div {
         &:nth-of-type(even) {
-            flex-direction: row;
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 768px) {
+        & > div {
+            &:nth-of-type(even) {
+                flex-direction: column;
+            }
         }
     }
 `

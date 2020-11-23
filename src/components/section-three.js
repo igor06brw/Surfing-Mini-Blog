@@ -19,6 +19,10 @@ const Container = styled.div`
 
 const ArticleImage = styled(Img)`
     width: 53.8em;
+
+    @media (max-width: 768px) {
+        width: 100vw;
+    }
 `
 
 const ArticleContent = styled.div`
@@ -28,6 +32,12 @@ const ArticleContent = styled.div`
     & > * {
         padding: 0;
     }
+
+    @media (max-width: 768px) {
+        margin: 0 auto;
+        width: 90%;
+    }
+    
 
 `
 
@@ -45,12 +55,26 @@ const ArticleWrapper = styled.div`
             left: auto;
             right: 0;
         }
+        
+    }
+
+    @media (max-width: 768px) {
+        padding: 5em 0em;
+        flex-direction: column;
+
+        &:nth-of-type(even) {
+            flex-direction: column;       
+        }
     }
 `
 
 const ArticleImageWrapper = styled.div`
     left: 0;
     position: absolute;
+
+    @media (max-width: 768px) {
+        position: relative;
+    }
 `
 
 const SectionThree = () => {

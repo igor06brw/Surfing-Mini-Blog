@@ -12,6 +12,8 @@ const Section = styled.section`
     flex-direction: row;
     justify-content: space-between;
 
+    
+
 `
 
 const Container = styled.div`
@@ -22,6 +24,7 @@ const Container = styled.div`
 
 const CustomBackground = styled(BackgroundImage)`
     width: 100%;
+    
 `
 
 const Wrapper = styled.div`
@@ -34,6 +37,16 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: space-evenly;
     }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin: 0 auto;
+        width: 90%;
+        & > * {
+            margin: 0.7em auto;
+            width: 100%;
+        }
+    }
 `
 
 const WrapperOfImage = styled.div`
@@ -41,10 +54,18 @@ const WrapperOfImage = styled.div`
     max-width: 170px;
     width: 33%;
     max-height: 400px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 
 const WrapperOfText = styled.div`
     width: 200px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 
 const SectionTwo= () => {

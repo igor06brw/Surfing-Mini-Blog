@@ -39,6 +39,13 @@ const StyledHeadline = styled.h1`
   transform: rotate(-30deg);
   font-size: 18em;
 
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    margin-top: 30%;
+    font-size: 13em;
+}
+
   text-shadow: #fff 0px 0px 5px
 `
 

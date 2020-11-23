@@ -8,16 +8,26 @@ const Article = styled.div`
     flex-direction: row-reverse;
     align-items: center;
     width: 100%;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 const ArticleImage = styled.img`
     width: 49%;
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `
 
 const ArticleContent = styled.div`
     width: 51%;
     padding: 0 50px;
     text-align: center;
+    @media (max-width: 768px) {
+        width: auto;
+    }
 `
 
 const ArticleDate = styled.p`   
