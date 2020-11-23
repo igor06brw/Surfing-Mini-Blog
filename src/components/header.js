@@ -43,8 +43,8 @@ const StyledHeadline = styled.h1`
 
   @media (max-width: 768px) {
     margin-top: 30%;
-    font-size: 13em;
-}
+    font-size: 30vw;
+  }
 
   text-shadow: #fff 0px 0px 5px
 `
