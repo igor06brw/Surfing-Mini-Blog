@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, useStaticQuery, Link } from 'gatsby'
-import ArticlePost from "../templates/article-post"
-
+import { graphql, StaticQuery } from 'gatsby'
+import ArticlePost from '../components/article'
+import Pagination from '../components/pagination'
 
 const Section = styled.section`
     max-width:1725px;
@@ -23,58 +23,58 @@ const Container = styled.div`
     }
 `
 
-const Pagination = styled.div`
-
-`
-
-const NextPage = styled(Link)`
-
-`
-
-const PrevPage = styled(Link)`
-
-`
-
-const SectionFive = () => {
-    const data = useStaticQuery(
-        graphql`
-            query {
-                allDatoCmsSurfingschema(sort: {fields: date, order: DESC}, limit: 3) {
-                    edges {
-                        node {
-                            author
-                            header
-                            id
-                            date
-                            post
-                            image {
-                                url
-                            }
-                        }
-                    }
-                }
-            }
-        `  
-    )
-
-    const allPosts = data.allDatoCmsSurfingschema.edges
-    console.log(Array.from(allPosts));
-
-    return (  
+const SectionFive = ({children}) => {
+    const postsPerPage = 3;
+    let numberOfPages
+    return ( 
         <Section>
             <Container>
-                {
-                
-                    allPosts.map((e, i) =>  (
-                        <ArticlePost props={e}/>
-                    ))
-                }
-            <Pagination>
-                <NextPage>See more</NextPage>
-            </Pagination>
+                <StaticQuery query={sectionFiveQuery} render={data => {
+                    numberOfPages = Math.ceil(data.allDatoCmsArticle.totalCount / postsPerPage)
+                    console.log(numberOfPages)
+                    return(
+                        <>
+                            {data.allDatoCmsArticle.edges.map(({ node }) => (
+                                <ArticlePost
+                                    key={node.id}
+                                    title={node.title} 
+                                    date={node.date} 
+                                    author={node.author} 
+                                    slug={node.slug} 
+                                    body={node.body} 
+                                    image={node.image.url}
+                                />
+                            ))}
+                        </>
+                    )}}
+                />
+                {children}
+                <Pagination currentPage={1} numberOfPages={numberOfPages} />
             </Container>
         </Section>
     )
 }
 
-export default SectionFive
+export const sectionFiveQuery = graphql`
+    query {
+        allDatoCmsArticle(sort: {fields: date, order: DESC}, limit: 3) {
+            totalCount
+            edges {
+                node {
+                    author
+                    title
+                    id
+                    slug
+                    date
+                    body
+                    image {
+                        url
+                    }
+                }
+            }
+        }
+    }
+`  
+
+
+export default SectionFive;

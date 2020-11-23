@@ -40,14 +40,14 @@ const ArticleLink = styled(Link)`
     cursor: pointer;
 `
 
-const ArticlePost = (data) => {
+const ArticlePost = ({key, title, body, image, date, author}) => {
     return (
         <Article>
-            <ArticleImage src={data.props.node.image.url}/>
+            <ArticleImage src={image}/>
             <ArticleContent>
-                <ArticleDate>{data.props.node.date}</ArticleDate>
-                <ArticleHeader>{data.props.node.header}</ArticleHeader>
-                <ArticleText>{data.props.node.post}</ArticleText>
+                <ArticleDate>{date}</ArticleDate>
+                <ArticleHeader>{title}</ArticleHeader>
+                <ArticleText>{body}</ArticleText>
                 <ArticleLink>Read More</ArticleLink>
             </ArticleContent>
         </Article>
