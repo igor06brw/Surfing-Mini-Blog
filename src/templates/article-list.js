@@ -67,7 +67,7 @@ export const articleListQuery = graphql`
                     title
                     id
                     slug
-                    date
+                    date(formatString: "dddd, MMMM DD, YYYY")
                     body
                     image {
                         url
