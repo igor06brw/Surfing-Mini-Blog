@@ -1,4 +1,23 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const PaginationContainer = styled.div`
+    text-align: center;
+`
+const PaginationList = styled.ul`
+    display: inline-flex;
+    text-align: center;
+    list-style: none;
+`
+const PaginationItem = styled.li`
+    margin: 1em 2em
+`
+const PaginationLink = styled.a`
+    text-decoration: none;
+    color: var(--scroll-text);
+    border-bottom: 1px solid var(--scroll-text);
+`
+
 
 const PaginationLinks = ({ currentPage, numberOfPages }) => {
     const isFirst = currentPage === 1
@@ -8,42 +27,28 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
     console.log(currentPage)
     console.log(numberOfPages)
     return (
-        <ul aria-label="Page navigation example">
-            {isFirst ? (
-                <li disabled>
-                    <a previous href="/" />
-                </li>
-            ) : (
-                <li>
-                    <a previous href={previousPage} />
-                </li>
-            )}
-            {
-                Array.from({ length: numberOfPages }, (_,i) => currentPage === i + 1 ? (
-                        <li active key={`page-number${i + 1}`}>
-                            <a href={`/${i === 0 ? '' : 'page/' + (i + 1)}`}>
-                                {i + 1}
-                            </a>
-                        </li> 
-                    ) : (
-                        <li key={`page-number${i + 1}`}>
-                            <a href={`/${i === 0 ? '' : 'page/' + (i + 1)}`}>
-                                {i + 1}
-                            </a>
-                        </li>
-                    )
-                )
-            }
-            {isLast ? (
-                <li disabled>
-                    <a next href={nextPage}>Next</a>
-                </li>
-            ) : (
-                <li>
-                    <a next href={nextPage}>Next</a>
-                </li>
-            )}
-        </ul>
+        <PaginationContainer>
+            <PaginationList aria-label="Page navigation example">
+                {isFirst ? (
+                    <PaginationItem disabled>
+                        <PaginationLink previous href="/" >Previous</PaginationLink>
+                    </PaginationItem>
+                ) : (
+                    <PaginationItem>
+                        <PaginationLink previous href={previousPage} >Previous</PaginationLink>
+                    </PaginationItem>
+                )}
+                {isLast ? (
+                    <PaginationItem disabled>
+                        <PaginationLink next href={nextPage}>See more</PaginationLink>
+                    </PaginationItem>
+                ) : (
+                    <PaginationItem>
+                        <PaginationLink next href={nextPage}>See more</PaginationLink>
+                    </PaginationItem>
+                )}
+            </PaginationList>
+        </PaginationContainer>
     )
 }
 
