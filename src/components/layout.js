@@ -12,7 +12,6 @@ const Layout = ({ children }) => {
       <SectionTwo />
       <SectionThree />
       <SectionFour />
-      <SectionFive children={children}/>
       {children}
     </div>
   )

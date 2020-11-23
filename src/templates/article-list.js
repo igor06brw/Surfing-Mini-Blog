@@ -2,14 +2,39 @@ import React from "react"
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import ArticlePost from '../components/article'
-import SectionFive from "../components/section-five"
+import styled from "styled-components"
+import Pagination from '../components/pagination'
+
+const Section = styled.section`
+    max-width:1725px;
+    display: flex;
+    margin: 15em auto 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
+`
+const Container = styled.div`
+    max-width: 1140px;
+    margin: 0 auto 20% auto;
+    position: relative;
+
+    & > div {
+        &:nth-of-type(even) {
+            flex-direction: row;
+        }
+    }
+`
+
 
 const ArticleList = (props) => {
     console.log(props.data.allDatoCmsArticle.edges.map)
+    const { currentPage } = props.pageContext
     const articles = props.data.allDatoCmsArticle.edges;
+    const postPerPage = 3
+    const numberOfPages = 2
     return ( 
         <Layout>
-            <SectionFive>
+            <Section>
+                <Container>
                 {
                     articles.map(({node}) => {
                         
@@ -26,7 +51,9 @@ const ArticleList = (props) => {
                         )
                     })
                 }
-            </SectionFive>
+                <Pagination currentPage={currentPage} numberOfPages={numberOfPages} />
+                </Container>
+            </Section>
         </Layout>
     )
 }

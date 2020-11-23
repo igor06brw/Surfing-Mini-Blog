@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { graphql, StaticQuery } from 'gatsby'
 import ArticlePost from '../components/article'
 import Pagination from '../components/pagination'
+import Layout from "./layout"
 
 const Section = styled.section`
     max-width:1725px;
@@ -27,31 +28,31 @@ const SectionFive = ({children}) => {
     const postsPerPage = 3;
     let numberOfPages
     return ( 
-        <Section>
-            <Container>
-                <StaticQuery query={sectionFiveQuery} render={data => {
-                    numberOfPages = Math.ceil(data.allDatoCmsArticle.totalCount / postsPerPage)
-                    console.log(numberOfPages)
-                    return(
-                        <>
-                            {data.allDatoCmsArticle.edges.map(({ node }) => (
-                                <ArticlePost
-                                    key={node.id}
-                                    title={node.title} 
-                                    date={node.date} 
-                                    author={node.author} 
-                                    slug={node.slug} 
-                                    body={node.body} 
-                                    image={node.image.url}
-                                />
-                            ))}
-                        </>
-                    )}}
-                />
-                {children}
-                <Pagination currentPage={1} numberOfPages={numberOfPages} />
-            </Container>
-        </Section>
+            <Section>
+                <Container>
+                    {children}
+                    <StaticQuery query={sectionFiveQuery} render={data => {
+                        numberOfPages = Math.ceil(data.allDatoCmsArticle.totalCount / postsPerPage);
+                        console.log(numberOfPages);
+                        return(
+                            <>
+                                {data.allDatoCmsArticle.edges.map(({ node }) => (
+                                    <ArticlePost
+                                        key={node.id}
+                                        title={node.title} 
+                                        date={node.date} 
+                                        author={node.author} 
+                                        slug={node.slug} 
+                                        body={node.body} 
+                                        image={node.image.url}/>
+                                ))}
+                                <Pagination currentPage={1} numberOfPages={numberOfPages} />
+                            </>
+                        )}} 
+                    />
+                </Container>
+            </Section>
+
     )
 }
 
